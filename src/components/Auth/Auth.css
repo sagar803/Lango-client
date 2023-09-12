@@ -1,0 +1,84 @@
+.auth-body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #3b81fb;
+}
+.auth-form-container {
+    width: min(450px, 80%);
+    border-radius: 15px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+.auth-form-container h1 {
+    font-size: 2rem;
+}
+.auth-form{
+    width: 100%;
+}
+.auth-form input {
+    width: 75%;
+    background-color: rgb(243, 243, 243);
+    color: rgb(64, 64, 64);
+    font-size: 18px;
+    outline: none;
+    border-radius: 8px;
+    transition: 0.1s;
+    height: 50px;
+    padding-left: 15px;
+    margin: 7px;
+    border: none;
+}
+.auth-form input:focus {
+    border-bottom: 2px solid cornflowerblue;
+}
+    
+.auth-form button {
+    width: 75%;
+    height: 50px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 18px;
+    background-color: cornflowerblue;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+}
+  
+.auth-form button:hover {
+    background-color: rgb(45, 116, 247);
+}
+.auth-form-container .toggle-page{
+    color: cornflowerblue;
+    font-weight: 500;
+    font-size: 14px;
+    margin-top: 0;
+    height: 10px;
+    width: 75%;
+    text-align: right;
+}
+.auth-form-container p:hover{
+    cursor: pointer;
+    color: rgb(33, 109, 250);
+}
+.error{
+    background-color: red;
+    color: red;
+    width: 75%;
+    text-align: left;
+}
+@media screen and (max-width: 900px) {
+    .auth-form-container input, .auth-form-container button {
+        font-size: 16px;
+        width: 85%;
+    }
+    
+}
