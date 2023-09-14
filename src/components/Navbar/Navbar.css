@@ -20,18 +20,31 @@ nav {
 
 nav .logo{
     width: 150px;
-    cursor: cell;
+    cursor: pointer;
     font-size: 2rem;
     font-weight: 500;
     letter-spacing: 10px; 
-
+    
 }
 
-@media (max-width: 900px) {
+.widget-container{
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    right: 20%;
+    top: 80px;
+    background-color: rgba(128, 128, 128, 0.349);
+}
+.active{
+    background-color: rgba(128, 128, 128, 0.263);
+}
+
+@media (max-width: 650px) {
     nav {
         justify-content: space-between;
     }
     nav .logo{
+        margin-left: 20px;
         font-size: 1.5rem;
         letter-spacing: 7px;
     }

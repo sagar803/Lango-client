@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 function App() {
   const [user , setUser] = useState({});
+  console.log(user);
   const [isAuth, setIsAuth] = useState(false);
   const [selectedOptions, setSelectedOptions] = useState({local: "", practice: ""})
 

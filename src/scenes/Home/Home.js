@@ -32,7 +32,7 @@ export const Home = ({local, practice, setIsAuth, user}) => {
   
   return (
     <div className='home'>
-      <Navbar />
+      <Navbar user={user} setIsAuth={setIsAuth}/>
       <div className='level-container'>
         <p className={level === "easy" ? 'level selected' : 'level'} onClick={() => setLevel('easy')}>Easy</p>
         <p className={level === "medium" ? 'level selected' : 'level'} onClick={() => setLevel('medium')}>Medium</p>

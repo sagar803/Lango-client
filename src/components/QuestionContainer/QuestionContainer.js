@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './QuestionContainer.css'
 
+
 export const QuestionContainer = ({q, user}) => {
   const [selected, setSelected] = useState(-1);
   const [submissionResult, setSubmissionResult] = useState();
@@ -31,7 +32,7 @@ export const QuestionContainer = ({q, user}) => {
 
   return (
     <div className='quiz-container'>
-        
+
         <div className='question-meta-data'>
           <p>{q.languageId.toUpperCase()}</p>
           <i class="fa-solid fa-brain"></i>
@@ -47,7 +48,7 @@ export const QuestionContainer = ({q, user}) => {
         <div className='options-container'>
           {q.quiz.options.map((o, index) => (
             <div 
-                className={`option ${selected === index ? (submissionResult ? 'green' : 'red') : ''}`}
+                className={`option ${selected === index ?  (submissionResult ? 'green' : 'red') : ''}`}
                 onClick={() => handleSubmit(index)}
             >
               {o}

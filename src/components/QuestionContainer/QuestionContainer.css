@@ -2,7 +2,7 @@
     border-radius: 20px;
     background-color: rgba(255, 255, 255, 0.052);
     padding: 10px;
-    margin: 50px;
+    margin: 50px 15px;
 }
 .question-meta-data{
     display: flex;
@@ -44,7 +44,7 @@
     cursor: pointer;
     margin: 5px;
     border-radius: 10px;
-    transition: 0.2s;
+    transition: 0.4s;
     background-color: rgba(128, 128, 128, 0.263);
 }
 .green{
@@ -56,8 +56,11 @@
     background-color: rgb(255, 0, 0);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 650px) {
     .options-container{
         flex-direction: column;
     }   
+    .option{
+        width: 80%;
+    }
 }
