@@ -1,0 +1,96 @@
+.setup-body{
+    background-color: rgb(33, 109, 250);
+    min-height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.setup-container{
+    width: 70%;
+    height: 70%;
+    display: grid;
+    grid-template-columns: 2fr 50%;
+    justify-content: center;
+    align-items: center;
+}
+.setup-heading{
+    width: 300px;
+    color: #ffffff;
+    margin: 0;
+    padding: 40px; 
+    grid-column-start: 1;
+    grid-row: 1;
+}
+.select-local-language{
+    grid-column: 1;
+    grid-row: 2/4;
+}
+.select-practice-language{
+    grid-column-start: 2;
+    grid-row: 1/3;
+}
+.languages-container{
+    background-color: white;
+    width: min(85%, 400px);
+    display: flex;
+    flex-direction: column;
+
+    padding: 15px;
+    border-radius: 15px;
+}
+.language-container-heading{
+    font-size: 18px;
+    font-weight: 500;
+    color: rgb(33, 109, 250);
+}
+hr{
+    width: 100%;
+}
+.setup-submit-button{
+    align-items: center;
+    grid-column: 2;
+    width: min(85%, 400px);
+    grid-row-start: 3;
+    display: flex;
+    justify-content: center;
+}
+.languages-container label{
+    padding: 15px;
+    font-weight: 500;
+    border-radius: 5px;
+    color: rgb(84, 84, 84);
+    transition: 0.2s;
+}
+.languages-container label:hover{
+    color: white;
+    background-color: rgba(33, 109, 250, 0.653);
+}
+.setup-submit-button button{
+    width: 200px;
+    height: 50px;
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 18px;
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+    outline: none;
+}
+.setup-submit-button button:hover {
+    color: white;
+    background-color: cornflowerblue;
+}
+
+@media screen and (max-width: 900px) { 
+    .setup-container{
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        height: 400%;
+    }
+}
