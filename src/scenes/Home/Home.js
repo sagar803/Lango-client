@@ -6,7 +6,7 @@ import { Navbar } from '../../components/Navbar/Navbar'
 export const Home = ({setIsAuth}) => {
   const [questions, setQuestions] = useState([]);
   const [level, setLevel] = useState("easy");
-
+// eslint-disable-next-line  no-unused-vars
   const local = localStorage.getItem('lango-local');
   const practice = localStorage.getItem('lango-practice');
 

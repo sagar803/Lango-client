@@ -6,7 +6,6 @@ export const QuestionContainer = ({q}) => {
   const [selected, setSelected] = useState(-1);
   const [submissionResult, setSubmissionResult] = useState();
   const userId = localStorage.getItem('lango-user-id');
-  console.log(q);
   const handleSubmit = async (index) => {
       setSelected(index);
       try {
