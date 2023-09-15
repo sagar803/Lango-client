@@ -24,7 +24,8 @@
     border-color: rgb(255, 255, 255);
 }
 .question-data{
-    background-color: rgba(255, 255, 255, 0.263);
+
+    background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.166), rgba(255, 255, 255, 0));
     border-radius: 10px;
     margin: 20px;
     padding: 15px;
