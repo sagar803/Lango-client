@@ -42,7 +42,7 @@ export const Setup = () => {
     return (
       <div className='setup-body'>
         <div className='setup-container'>
-            <h1 className='setup-heading'>Getting Started....</h1>
+            <h2 className='setup-heading'>Getting Started....</h2>
             <div className='select-local-language languages-container'>
                 <p className='language-container-heading'>Which Language you are comfortable with..</p>
                 <hr />

@@ -15,7 +15,7 @@
     align-items: center;
 }
 .setup-heading{
-    width: 300px;
+    width: 200px;
     color: #ffffff;
     margin: 0;
     padding: 40px; 
@@ -35,7 +35,6 @@
     width: min(85%, 400px);
     display: flex;
     flex-direction: column;
-
     padding: 15px;
     border-radius: 15px;
 }
@@ -92,5 +91,7 @@ hr{
         flex-direction: column;
         gap: 50px;
         height: 400%;
+        width: 90%;
+
     }
 }

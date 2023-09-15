@@ -4,7 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #3b81fb;
+    background-color: rgb(33, 109, 250);
+
 }
 .auth-form-container {
     width: min(450px, 80%);
@@ -18,7 +19,8 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .welcome{
-    color: #3b81fb;
+    color: rgb(33, 109, 250);
+
 }
 .auth-form-container h1 {
     font-size: 2rem;
