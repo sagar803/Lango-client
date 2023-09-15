@@ -3,10 +3,13 @@ import './Home.css'
 import { QuestionContainer } from '../../components/QuestionContainer/QuestionContainer'
 import { Navbar } from '../../components/Navbar/Navbar'
 
-export const Home = ({local, practice, setIsAuth, user}) => {
+export const Home = ({setIsAuth}) => {
   const [questions, setQuestions] = useState([]);
   const [level, setLevel] = useState("easy");
-  
+
+  const local = localStorage.getItem('lango-local');
+  const practice = localStorage.getItem('lango-practice');
+
   const fetchData = async () => {
     try {
       const res = await fetch(`${process.env.REACT_APP_API}/questions/${practice.toLowerCase()}/${level}`, {
@@ -32,7 +35,7 @@ export const Home = ({local, practice, setIsAuth, user}) => {
   
   return (
     <div className='home'>
-      <Navbar user={user} setIsAuth={setIsAuth}/>
+      <Navbar setIsAuth={setIsAuth}/>
       <div className='level-container'>
         <p className={level === "easy" ? 'level selected' : 'level'} onClick={() => setLevel('easy')}>Easy</p>
         <p className={level === "medium" ? 'level selected' : 'level'} onClick={() => setLevel('medium')}>Medium</p>
@@ -40,7 +43,7 @@ export const Home = ({local, practice, setIsAuth, user}) => {
       </div>
       <section className='home-main'>
         <div className='questions-container'>
-          {questions.map((q) => <QuestionContainer user={user} key={q._id} q={q} />)}
+          {questions.map((q) => <QuestionContainer key={q._id} q={q} />)}
         </div>
       </section>
     </div>

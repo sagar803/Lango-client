@@ -1,15 +1,24 @@
 import './App.css';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Auth } from './components/Auth/Auth';
 import { Home } from './scenes/Home/Home.js';
 import { Setup } from './scenes/Setup/Setup';
-import { useState } from 'react';
+import { useState , useEffect} from 'react';
 
 function App() {
-  const [user , setUser] = useState({});
-  console.log(user);
   const [isAuth, setIsAuth] = useState(false);
-  const [selectedOptions, setSelectedOptions] = useState({local: "", practice: ""})
+
+  useEffect(() => {
+    const user = localStorage.getItem('lango-user');
+    const userId = localStorage.getItem('lango-user-id');
+
+    if (user && userId) {
+      setIsAuth(true);
+    } else {
+      setIsAuth(false);
+    }
+  }, [isAuth]);
+
 
   return (
     <Router>
@@ -21,11 +30,15 @@ function App() {
         />
         <Route
           path="/" 
-          element={isAuth ? <Home user={user} local={selectedOptions.local} practice={selectedOptions.practice} setIsAuth={setIsAuth}/> : <Auth isAuth={isAuth} setIsAuth={setIsAuth} setUser={setUser}/>} 
+          element={<Auth isAuth={isAuth} setIsAuth={setIsAuth}/>} 
         />
         <Route
             path="/setup" 
-            element={isAuth ? <Setup selectedOptions={selectedOptions} setSelectedOptions={setSelectedOptions}/> : <Setup />} 
+            element={isAuth ? <Setup /> :  <Navigate to='/' />} 
+        />
+        <Route
+            path="/home" 
+            element={isAuth ? <Home setIsAuth={setIsAuth}/> :  <Navigate to='/' />} 
         />
       </Routes>
       </div>

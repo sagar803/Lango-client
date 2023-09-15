@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './Auth.css'
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
+import { Loader } from '../Loader/Loader';
 
 
 export const Auth = ({isAuth, setIsAuth, setUser}) => {
@@ -60,9 +61,10 @@ export const Auth = ({isAuth, setIsAuth, setUser}) => {
             }) 
             if (res.ok){
                 const data = await res.json();
-                setUser(data.user);
-//                localStorage.setItem("token" , data.token);
-//                localStorage.setItem("user" , data.user.fullName);
+                console.log(data.user);
+                localStorage.setItem("lango-token" , data.token);
+                localStorage.setItem("lango-user" , data.user);
+                localStorage.setItem("lango-user-id" , data.user._id);
                 setIsAuth(true);
                 navigate('/setup');
             }
@@ -114,19 +116,18 @@ export const Auth = ({isAuth, setIsAuth, setUser}) => {
                     onChange={(e) => setCredentials({ ...credentials, password: e.target.value })} 
                     type='password' 
                     placeholder="Password" 
-                    />
+                />
                 <button 
                     type='submit'
                     onClick={handleSubmit}
-                >
-                    {(pageType === "login") ? "Login" : "Register"}
+                    >
+                    {loading ? <Loader/> : (pageType === "login") ? "Login" : "Register"}
                 </button>
                 <p
                     className='toggle-page'
                     onClick={togglePageType}
-                >{(pageType === "login") ? "Register here" : "Login here"}</p>
+                    >{(pageType === "login") ? "Register here" : "Login here"}</p>
             </form>
-
       </div>
     </div>
   )

@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Setup.css'
 import { useNavigate } from 'react-router-dom'
 
 
-export const Setup = ({selectedOptions, setSelectedOptions}) => {
+export const Setup = () => {
+    const [selectedOptions, setSelectedOptions] = useState({local: "", practice: ""})
     const navigate = useNavigate();
 
     const handleSubmit = () => {
         if(selectedOptions.local === "" || selectedOptions.practice === "" || (selectedOptions.local === selectedOptions.practice)){
           alert('Please fill the details correctly');      
         } else {
-          navigate('/')
+          localStorage.setItem('lango-local', selectedOptions.local);
+          localStorage.setItem('lango-practice', selectedOptions.practice);
+          navigate('/home')
         }
     }
     const language = [

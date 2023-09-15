@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import './QuestionContainer.css'
 
 
-export const QuestionContainer = ({q, user}) => {
+export const QuestionContainer = ({q}) => {
   const [selected, setSelected] = useState(-1);
   const [submissionResult, setSubmissionResult] = useState();
+  const userId = localStorage.getItem('lango-user-id');
 
   const handleSubmit = async (index) => {
       setSelected(index);
@@ -16,7 +17,7 @@ export const QuestionContainer = ({q, user}) => {
               },
               body: JSON.stringify({
                 questionId: q._id, 
-                userId: user._id,
+                userId,
                 submission: index,
             }),
           }) 

@@ -5,13 +5,14 @@ import './Navbar.css'
 import { ProfileWidget } from '../../components/ProfileWidget/ProfileWidget'
 
 
-export const Navbar = ({setIsAuth, user}) => {
+export const Navbar = ({setIsAuth}) => {
   const [visible, setVisible] = useState(false);
   const [progress, setProgress] = useState();
-
+  
+  const userId = localStorage.getItem('lango-user-id');
   const fetchData = async () => {
     try {
-      const res = await fetch(`${process.env.REACT_APP_API}/user/${user._id}`, {
+      const res = await fetch(`${process.env.REACT_APP_API}/user/${userId}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -47,7 +48,7 @@ export const Navbar = ({setIsAuth, user}) => {
       </div>
       {visible && (
         <div className="widget-container">
-          <ProfileWidget user={user} progress={progress} setIsAuth={setIsAuth} />
+          <ProfileWidget progress={progress} setIsAuth={setIsAuth} />
         </div>
       )}
     </nav>
