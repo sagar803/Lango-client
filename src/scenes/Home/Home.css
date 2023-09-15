@@ -1,11 +1,11 @@
 .home{
-    background-color: #323437;
-    color: grey;
+    background-color: #3b81fb;
+    color: white;
     min-height: 100%;
     width: 100%;
 }
 .level-container{
-    background-color: #00000021;
+    background-color: #ffffff21;
     display: flex;
     padding: 5px;
     justify-content: center;   
@@ -19,11 +19,11 @@
     transition: 0.2s;
 }
 .selected{
-    background-color: #e2b714!important;
-    color: rgb(45, 45, 45)
+    background-color: white!important;
+    color: rgb(82, 82, 82)
 }
 .level:hover{
-    background-color: rgba(128, 128, 128, 0.263);
+    background-color: rgba(255, 255, 255, 0.263);
 }
 .home-main{
     display: flex;
@@ -35,7 +35,6 @@
     padding: 25px 0;
     width: min(100%, 800px);
 }
-
 
 
 

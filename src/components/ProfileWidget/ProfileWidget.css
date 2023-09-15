@@ -1,7 +1,10 @@
+.user-progress{
+    padding: 5px 20px;
+}
 .logout{
-    border-radius: 5px;
+    margin-bottom: 10px;
     padding: 10px;
-    background-color: #e2b714;
+    background-color: #3b81fba9;
     cursor: pointer;
-    color: black;
+    color: white;
 }
