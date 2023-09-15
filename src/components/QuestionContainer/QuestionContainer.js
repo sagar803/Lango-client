@@ -6,8 +6,7 @@ export const QuestionContainer = ({q}) => {
   const [selected, setSelected] = useState(-1);
   const [submissionResult, setSubmissionResult] = useState();
   const userId = localStorage.getItem('lango-user-id');
-
-
+  console.log(q);
   const handleSubmit = async (index) => {
       setSelected(index);
       try {
@@ -50,7 +49,7 @@ export const QuestionContainer = ({q}) => {
         <div className='options-container'>
           {q.quiz.options.map((o, index) => (
             <div 
-                className={`option ${(selected === index && submissionResult !== undefined) ?  (submissionResult ? 'green' : 'red') : ''}`}
+                className={`option ${selected === index  ?  (selected === q.quiz.correct_option ? 'green' : 'red') : ''}`}
                 onClick={() => handleSubmit(index)}
             >
               {o}
