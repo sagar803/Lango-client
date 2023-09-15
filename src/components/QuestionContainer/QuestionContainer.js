@@ -7,6 +7,7 @@ export const QuestionContainer = ({q}) => {
   const [submissionResult, setSubmissionResult] = useState();
   const userId = localStorage.getItem('lango-user-id');
 
+
   const handleSubmit = async (index) => {
       setSelected(index);
       try {
@@ -41,15 +42,15 @@ export const QuestionContainer = ({q}) => {
         </div>
         
         <hr className='question-hr'/>
-        
-        <div className='question'>
-          {q.quiz.question}
+        <div className='question-data'> 
+          <p>{q.helper_text}</p>
+          <p> Q: {q.quiz.question}</p>
         </div>
         
         <div className='options-container'>
           {q.quiz.options.map((o, index) => (
             <div 
-                className={`option ${selected === index ?  (submissionResult ? 'green' : 'red') : ''}`}
+                className={`option ${(selected === index && submissionResult !== undefined) ?  (submissionResult ? 'green' : 'red') : ''}`}
                 onClick={() => handleSubmit(index)}
             >
               {o}

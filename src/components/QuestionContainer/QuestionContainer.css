@@ -23,8 +23,11 @@
     width: 95%;
     border-color: grey;
 }
-.question{
-    margin: 40px;
+.question-data{
+    background-color: #e2b51418;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 15px;
     font-size: 18px;
    text-align: center; 
 }
@@ -36,6 +39,7 @@
     margin: 20px;
 
 }
+
 .option{
     width: 80px;
     text-align: center;
@@ -62,5 +66,8 @@
     }   
     .option{
         width: 80%;
+    }
+    .question-data{
+        margin: 20px 5px;
     }
 }
