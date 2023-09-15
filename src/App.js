@@ -1,9 +1,10 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
-import { Auth } from './components/Auth/Auth';
+import { Auth } from './scenes/Auth/Auth';
 import { Home } from './scenes/Home/Home.js';
 import { Setup } from './scenes/Setup/Setup';
 import { useState , useEffect} from 'react';
+import { Ranking } from './scenes/Ranking/Ranking';
 
 function App() {
   const [isAuth, setIsAuth] = useState(false);
@@ -39,6 +40,10 @@ function App() {
         <Route
             path="/home" 
             element={isAuth ? <Home setIsAuth={setIsAuth}/> :  <Navigate to='/' />} 
+        />
+        <Route
+            path="/ranking" 
+            element={isAuth ? <Ranking setIsAuth={setIsAuth}/> :  <Navigate to='/' />} 
         />
       </Routes>
       </div>

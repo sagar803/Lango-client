@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Auth.css'
 import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
-import { Loader } from '../Loader/Loader';
+import { Loader } from '../../components/Loader/Loader';
 
 
 export const Auth = ({isAuth, setIsAuth, setUser}) => {

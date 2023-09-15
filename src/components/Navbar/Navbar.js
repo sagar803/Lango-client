@@ -35,9 +35,9 @@ export const Navbar = ({setIsAuth}) => {
   const navigate = useNavigate();
   return (
     <nav className='navbar'>
-      <div className='logo' onClick={() => navigate('/')}>LANGO</div>
+      <div className='logo' onClick={() => navigate('/home')}>LANGO</div>
       <div className='nav-icons'>
-        <i class="fa-solid fa-ranking-star"></i>
+        <i class="fa-solid fa-ranking-star" onClick={() => navigate('/ranking')}></i>
         {
           visible ? (
             <i class="fa-solid fa-xmark active" onClick={() => setVisible(!visible)}></i>
