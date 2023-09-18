@@ -31,7 +31,7 @@ function App() {
         />
         <Route
           path="/" 
-          element={<Auth isAuth={isAuth} setIsAuth={setIsAuth}/>} 
+          element={isAuth ? <Navigate to='/home' /> :  <Auth setIsAuth={setIsAuth}/>} 
         />
         <Route
             path="/setup" 

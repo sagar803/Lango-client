@@ -5,9 +5,8 @@ import * as Yup from 'yup';
 import { Loader } from '../../components/Loader/Loader';
 
 
-export const Auth = ({isAuth, setIsAuth, setUser}) => {
+export const Auth = ({setIsAuth}) => {
     const navigate = useNavigate();
-    // eslint-disable-next-line no-unused-vars
     const [loading, setLoading] = useState(false);
     const [pageType, setPageType] = useState("login");
     const [credentials , setCredentials ] = useState({fullName : '', email : '' , password : ''});
